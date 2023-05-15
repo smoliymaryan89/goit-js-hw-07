@@ -29,11 +29,13 @@ function openLargeImg(largeImg) {
 
   instance.show();
 }
+
 function onEscPressKey(event) {
   if (event.code === 'Escape') {
     instance.close();
   }
 }
+
 function createListItemsMarkup(items) {
   return items
     .map(
