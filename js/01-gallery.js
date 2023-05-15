@@ -5,7 +5,6 @@ let instance;
 const ulEl = document.querySelector('.gallery');
 
 ulEl.addEventListener('click', onGalleryItemClick);
-window.addEventListener('keydown', onEscPressKey);
 
 function onGalleryItemClick(event) {
   event.preventDefault();
@@ -28,11 +27,13 @@ function openLargeImg(largeImg) {
 `);
 
   instance.show();
+  window.addEventListener('keydown', onEscPressKey);
 }
 
 function onEscPressKey(event) {
   if (event.code === 'Escape') {
     instance.close();
+    window.removeEventListener('keydown', onEscPressKey);
   }
 }
 
